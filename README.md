@@ -45,7 +45,9 @@ After initializing the provider:
  ```
 const response = await provider.createPayment({
   amount: 10000,
-  currency: 'usd'
+  currency: 'usd',
+  receiptEmail: 'test@gmail.com', // optional
+  metadata: {} // optional
 })
 
 ```
