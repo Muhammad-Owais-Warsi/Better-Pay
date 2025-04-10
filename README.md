@@ -36,7 +36,7 @@ For any provider there are two functions:
 
 
 ## STRIPE
- Get started with our sample demo app integrated with stripe. [Demo]()
+ Get started with our sample demo app integrated with stripe. [Demo](https://github.com/Muhammad-Owais-Warsi/stripe-demo)
 
 
 1. **Create Payment**
