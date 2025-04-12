@@ -8,6 +8,7 @@ Better Pay is a unified, developer-first payment integration layer that supports
 
 ## Integration Support 
 - Stripe
+- Square (Single step)
 - Coming Soon...
 
 ## Get Started
@@ -22,16 +23,10 @@ Better Pay is a unified, developer-first payment integration layer that supports
 import { BetterPay } from "better-pay";
    
 const provider = new BetterPay({
-  provider: "stripe" // or any provider
-  apiKey: "API_KEY_FOR_STRIPE" 
+  provider: " ", // or any provider
+  key: " "      // keys or tokens for provider integration
 })
 ```
----
-
-**NOTE**  
-For any provider there are two functions: 
-- Create Payment: to create your order, intent or payment.
-- Confirm Payment: to confirm your payment.
 ---
 
 
@@ -39,7 +34,18 @@ For any provider there are two functions:
  Get started with our sample demo app integrated with stripe. [Demo](https://github.com/Muhammad-Owais-Warsi/stripe-demo)
 
 
-1. **Create Payment**
+1. Initialise the provider
+```
+import { BetterPay } from "better-pay";
+   
+const provider = new BetterPay({
+  provider: "stripe",
+  apiKey: "API_KEY_FOR_STRIPE" 
+})
+
+```
+
+2. **Create Payment**
    
 After initializing the provider:
  ```
@@ -61,7 +67,7 @@ Supports card elements only.
 
 ---
 
-4. Confirm Payment
+3. Confirm Payment
 
 Once you have the `payment_method_id` from the frontend:
 
@@ -73,6 +79,46 @@ const response = await provider.confirmPayment({
 })
 
 ```
+
+---
+
+
+## SQUARE
+ Get started with our sample demo app integrated with square. [Demo](https://github.com/Muhammad-Owais-Warsi/stripe-demo)
+
+**NOTE**  
+
+Supports card elements only.
+
+---
+
+1. Initialise the provider
+```
+import { BetterPay } from "better-pay";
+   
+const provider = new BetterPay({
+  provider: "square",
+  apiToken: "API_TOKEN_FOR_SQUARE" 
+})
+
+```
+
+2. Confirm Payment
+
+  Get the `sourceId` from the client uisng the card element provided by Square.
+
+```
+const response = await provider.confirmPayment({
+  sourceId: YOUR_PAYMENT_SOURCE_ID,
+  amount: 100,
+  currency: 'USD'
+})
+
+```
+
+
+---
+
 
 
 
