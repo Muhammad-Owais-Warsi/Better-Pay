@@ -84,7 +84,7 @@ const response = await provider.confirmPayment({
 
 
 ## SQUARE
- Get started with our sample demo app integrated with square. [Demo](https://github.com/Muhammad-Owais-Warsi/stripe-demo)
+ Get started with our sample demo app integrated with square. [Demo](https://github.com/Muhammad-Owais-Warsi/square_demo)
 
 **NOTE**  
 
