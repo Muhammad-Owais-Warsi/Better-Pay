@@ -1,11 +1,12 @@
+import { SquareProvider } from "./providers/square/src/sqaure";
 import { StripeProvider } from "./providers/stripe/src/stripe"
-import { providerConfig, paymentResult, paymentError, createPayment, confirmPayment } from "./types";
+import { providerConfig, paymentResult, paymentError, createPayment, confirmPayment, baseProviderConfig } from "./types";
 
 export class BetterPay<T extends providerConfig> {
     
   private provider: T['provider'];
   private providerInstance: any;
-  
+
   constructor(config: T) {
     this.provider = config.provider;
     
@@ -13,8 +14,11 @@ export class BetterPay<T extends providerConfig> {
       case 'stripe':
         this.providerInstance = new StripeProvider(config)
         break;
+      case 'square':
+        this.providerInstance = new SquareProvider(config)
+        break;
       default:
-        console.error(`Unsupported provider: ${config.provider}`);
+        console.error(`Unsupported provider: ${this.provider}`);
         process.exit(1)
     }
   }
