@@ -36,7 +36,7 @@ For any provider there are two functions:
 
 
 ## STRIPE
- Get started with our sample demo app integrated with stripe. [Demo]()
+ Get started with our sample demo app integrated with stripe. [Demo](https://github.com/Muhammad-Owais-Warsi/stripe-demo)
 
 
 1. **Create Payment**
@@ -45,7 +45,9 @@ After initializing the provider:
  ```
 const response = await provider.createPayment({
   amount: 10000,
-  currency: 'usd'
+  currency: 'usd',
+  receiptEmail: 'test@gmail.com', // optional
+  metadata: {} // optional
 })
 
 ```
