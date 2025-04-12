@@ -13,6 +13,7 @@
       "url": "https://github.com/Muhammad-Owais-Warsi/Better-Pay",
       "type": "git"
   },
+  "homepage": "https://better-pay.gitbook.io/better-pay" ,
   "files": [
     "dist"
   ],
