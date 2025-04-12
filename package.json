@@ -9,6 +9,10 @@
   "scripts": {
     "build": "tsup"
   },
+  "repository": {
+      "url": "https://github.com/Muhammad-Owais-Warsi/Better-Pay",
+      "type": "git"
+  },
   "files": [
     "dist"
   ],
