@@ -19,7 +19,7 @@ export class DodoPaymentsProvider {
       const productResponse = await this.dodoPayments.products.create({
         price: {
           currency: params.currency,
-          discount: params.discount | 0,
+          discount: params.discount || 0,
           price: params.amount,
           purchasing_power_parity: true,
           type: 'one_time_price'
