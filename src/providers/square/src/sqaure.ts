@@ -1,5 +1,5 @@
 import { SquareClient } from "square";
-import { squareConfirmPayment, squarePaymentError, squarePaymentResult } from "./config";
+import { squareConfirmPayment, squareConfirmPaymentError, squareConfirmPaymentResult } from "./config";
 import { createIdempotentKey } from "./key";
 
 export class SquareProvider {
@@ -11,7 +11,7 @@ export class SquareProvider {
     });
   }
   
-  async confirmPayment(params: squareConfirmPayment): Promise<squarePaymentResult | squarePaymentError> {
+  async confirmPayment(params: squareConfirmPayment): Promise<squareConfirmPaymentResult | squareConfirmPaymentError> {
     try {
       const idempotentKey = createIdempotentKey();
       const response = await this.Square.payments.create({

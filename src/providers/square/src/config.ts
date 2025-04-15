@@ -12,14 +12,14 @@ export interface squareConfirmPayment {
 }
 
 
-export interface squarePaymentResult {
+export interface squareConfirmPaymentResult {
   paymentId: string;
   orderId: string;
   status: string;
   type: resultType
 }
 
-export interface squarePaymentError {
+export interface squareConfirmPaymentError {
   message: string;
   type: resultType
 }

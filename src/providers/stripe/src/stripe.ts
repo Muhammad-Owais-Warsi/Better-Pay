@@ -1,5 +1,5 @@
 import { Stripe } from "stripe";
-import { stripeConfirmPayment, stripeCreatePayment, stripePaymentError, stripePaymentResult } from "./config";
+import { stripeConfirmPayment, stripeConfirmPaymentError, stripeConfirmPaymentResult, stripeCreatePayment, stripeCreatePaymentError, stripeCreatePaymentResult } from "./config";
 
 export class StripeProvider {
   private stripe: Stripe;
@@ -8,7 +8,7 @@ export class StripeProvider {
     this.stripe = new Stripe(config.apiKey);
   }
 
-  async createPayment(params: stripeCreatePayment): Promise<stripePaymentResult | stripePaymentError> {
+  async createPayment(params: stripeCreatePayment): Promise<stripeCreatePaymentResult | stripeCreatePaymentError> {
     try {
       const response = await this.stripe.paymentIntents.create({
         amount: params.amount,
@@ -35,7 +35,7 @@ export class StripeProvider {
     }
   }
   
-  async confirmPayment(params: stripeConfirmPayment): Promise<stripePaymentResult | stripePaymentError> {
+  async confirmPayment(params: stripeConfirmPayment): Promise<stripeConfirmPaymentResult | stripeConfirmPaymentError> {
     try{
       const response = await this.stripe.paymentIntents.confirm(
         params.paymentIntentId,

@@ -20,14 +20,27 @@ export interface stripeConfirmPayment {
 }
 
 
-export interface stripePaymentResult {
+export interface stripeCreatePaymentResult {
   paymentIntentId: string;
   paymentIntentClientSecret: string;
   status: string;
   type: resultType
 }
 
-export interface stripePaymentError {
+export interface stripeConfirmPaymentResult {
+  paymentIntentId: string;
+  paymentIntentClientSecret: string;
+  status: string;
+  type: resultType
+}
+
+
+export interface stripeCreatePaymentError {
+  message: string;
+  type: resultType
+}
+
+export interface stripeConfirmPaymentError {
   message: string;
   type: resultType
 }
