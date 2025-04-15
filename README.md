@@ -73,9 +73,9 @@ Once you have the `payment_method_id` from the frontend:
 
 ```
 const response = await provider.confirmPayment({
-  paymentIntentId: YOUR_PAYMENT_INTENT_ID,
-  paymentMethodId: YOUR_PAYMENT_METHOD_ID,
-  returnUrl: YOUR_RETURN_URL_AFTER_SUCCESSFULL_PAYMENT
+  paymentIntentId: 'YOUR_PAYMENT_INTENT_ID',
+  paymentMethodId: 'YOUR_PAYMENT_METHOD_ID',
+  returnUrl: 'YOUR_RETURN_URL_AFTER_SUCCESSFULL_PAYMENT'
 })
 
 ```
@@ -109,7 +109,7 @@ const provider = new BetterPay({
 
 ```
 const response = await provider.confirmPayment({
-  sourceId: YOUR_PAYMENT_SOURCE_ID,
+  sourceId: 'YOUR_PAYMENT_SOURCE_ID',
   amount: 100,
   currency: 'USD'
 })
@@ -119,6 +119,57 @@ const response = await provider.confirmPayment({
 
 ---
 
+
+## DODO PAYMENTS
+ Get started with our sample demo app integrated with Dodo Payments. [Demo]()
+
+
+1. Initialise the provider
+```
+import { BetterPay } from "better-pay";
+   
+const provider = new BetterPay({
+  provider: "dodopayments",
+  apiKey: "API_KEY_FOR_DODO_PAYMENTS",
+  isLiveMode: false // by default false  
+})
+
+```
+
+2. **Create Payment**
+   
+After initializing the provider:
+ ```
+const response = await provider.createPayment({
+  amount: 100,
+  currency: 'USD',
+  discount: 0, // by default 0
+  email: 'test@gmail.com',
+  name: 'test',
+  phoneNumber: 99999999 // optional
+})
+
+```
+
+3. Confirm Payment
+
+Get the `customerId` and `productId` from above:
+
+```
+const response = await provider.confirmPayment({
+  customerId: 'YOUR_CUSTOMER_ID',
+  productId: 'YOUR_PRODUCT_ID',
+  city: 'USER_CITY',
+  countryIsoCode: 'USER_COUNTRY_ISO_CODE',
+  state: 'USER_STATE',
+  street: 'USER_STREET',
+  zipCode: USER_ZIP_CODE,
+  paymentLink: true, // One time payment link. By default false.
+  returnUrl: 'YOUR_RETURN_URL_AFTER_SUCCESSFULL_PAYMENT', // optional
+  metadata: {} //optional
+})
+
+```
 
 
 
