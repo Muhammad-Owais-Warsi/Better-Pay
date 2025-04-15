@@ -8,7 +8,7 @@ export interface dodoPaymentsConfig extends baseProviderConfig {
 
 export interface dodoPaymentsCreatePayment {
   amount: number;
-  discount: number;
+  discount?: number;
   currency: string;
   email: string;
   name: string;
