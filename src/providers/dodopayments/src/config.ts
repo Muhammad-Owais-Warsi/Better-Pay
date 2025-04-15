@@ -3,6 +3,7 @@ import { baseProviderConfig, resultType } from "../../../types";
 export interface dodoPaymentsConfig extends baseProviderConfig {
   provider: 'dodopayments',
   apiKey: string;
+  isLiveMode?: boolean;
 };
 
 export interface dodoPaymentsCreatePayment {

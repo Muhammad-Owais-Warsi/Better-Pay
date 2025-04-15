@@ -6,10 +6,10 @@ export class DodoPaymentsProvider {
   
   private dodoPayments: any
   
-  constructor(config: {apiKey: string}) {
+  constructor(config: {apiKey: string, isLiveMode?: boolean}) {
     this.dodoPayments = new DodoPayments({
       bearerToken: config.apiKey,
-      baseURL: 'https://test.dodopayments.com'
+      baseURL: config.isLiveMode ? 'https://live.dodopayments.com' : 'https://test.dodopayments.com'
     });
   }
   
