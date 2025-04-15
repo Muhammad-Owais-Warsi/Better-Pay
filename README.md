@@ -9,6 +9,7 @@ Better Pay is a unified, developer-first payment integration layer that supports
 ## Integration Support 
 - Stripe
 - Square (Single step)
+- Dodo Payments
 - Coming Soon...
 
 ## Get Started
@@ -121,7 +122,7 @@ const response = await provider.confirmPayment({
 
 
 ## DODO PAYMENTS
- Get started with our sample demo app integrated with Dodo Payments. [Demo]()
+ Get started with our sample demo app integrated with Dodo Payments. [Demo](https://github.com/Muhammad-Owais-Warsi/dodopayments_demo)
 
 
 1. Initialise the provider
