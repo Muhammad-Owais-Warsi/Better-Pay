@@ -1,3 +1,9 @@
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/9e793b2a-d94a-41cf-8a4c-0a6a806d685b" alt="Better Pay" width="500"/>
+</div>
+
+
 <h1 align="center">Better Pay</h1>
 <h3 align="center">The payment layer for modern applications.</h3>
 
