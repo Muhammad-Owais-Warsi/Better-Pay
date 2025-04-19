@@ -1,0 +1,31 @@
+import { baseProviderConfig } from "../../../types";
+
+
+export interface razorpayConfig extends baseProviderConfig {
+  provider: 'razorpay';
+  keyId: string;
+  keySecret: string;
+}
+
+export interface razorpayConfirmPayment {
+  upiLink: boolean;
+  amount: number;
+  currency: string;
+  name?: string;
+  phoneNumber?: string;
+  email: string;
+  returnUrl: string;
+  metadata?: any;
+}
+
+export interface razorpayConfirmPaymentResult {
+  referenceId: string;
+  paymentLink: string;
+  status: string;
+  type: string;
+}
+
+export interface razorpayConfirmPaymentError {
+  message: string;
+  type: string;
+}
