@@ -16,6 +16,7 @@ Better Pay is a unified, developer-first payment integration layer that supports
 - Stripe
 - Square (Single step)
 - Dodo Payments
+- Razorpay (Single step)
 - Coming Soon...
 
 ## Get Started
@@ -177,6 +178,45 @@ const response = await provider.confirmPayment({
 })
 
 ```
+
+---
+
+## RAZORPAY
+ Get started with our sample demo app integrated with razorpay. [Demo]()
+
+1. Initialise the provider
+```
+import { BetterPay } from "better-pay";
+   
+const provider = new BetterPay({
+  provider: "razorpay",
+  keyId: "KEY_ID_FOR_RAZORPAY",
+  keySecret: "KEY_SECRET_FOR_RAZORPAY" 
+})
+
+```
+
+2. Confirm Payment
+
+Get the necessary details from the user.
+
+```
+const response = await provider.confirmPayment({
+
+  upiLink: false, // UPI Link. By default false.
+  amount: 1000,
+  currency: 'INR',
+  name: '', // optional
+  phoneNumber:  , // optional
+  email: 'test@gamil.com',
+  returnUrl: 'YOUR_RETURN_URL_AFTER_SUCCESSFULL_PAYMENT',
+  metadata: {} // optional
+
+})
+
+```
+
+
 
 
 
