@@ -12,7 +12,7 @@ export interface razorpayConfirmPayment {
   amount: number;
   currency: string;
   name?: string;
-  phoneNumber?: string;
+  phoneNumber?: number;
   email: string;
   returnUrl: string;
   metadata?: any;
