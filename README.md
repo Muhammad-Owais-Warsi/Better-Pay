@@ -4,8 +4,10 @@
 </div>
 
 
-<h1 align="center">Better Pay</h1>
+
+<h1 align="center">Better Pay</h1> 
 <h3 align="center">The payment layer for modern applications.</h3>
+<img src="https://github.com/user-attachments/assets/5b661921-28c9-46bc-bd67-cdee58154761"/>
 
 
 ## What is Better Pay?
@@ -215,6 +217,10 @@ const response = await provider.confirmPayment({
 })
 
 ```
+
+
+## Community Support
+![Better Pay-supporters-light](https://github.com/user-attachments/assets/d80b0ff3-2f17-4ccc-8610-2226ab15a825)
 
 
 
