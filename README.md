@@ -195,6 +195,7 @@ Get the `customerId` and `productId` from above:
 const response = await provider.confirmPayment({
   customerId: 'YOUR_CUSTOMER_ID',
   productId: 'YOUR_PRODUCT_ID',
+  quantity: 1 // optional. By default set to 1
   city: 'USER_CITY',
   countryIsoCode: 'USER_COUNTRY_ISO_CODE',
   state: 'USER_STATE',
