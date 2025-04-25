@@ -1,5 +1,5 @@
 import Razorpay from "razorpay";
-import { razorpayConfirmPayment, razorpayConfirmPaymentError, razorpayConfirmPaymentResult } from "./config";
+import { razorpayCreatePaymentLink, razorpayCreatePaymentLinkError, razorpayCreatePaymentLinkResult } from "./config";
 
 export class RazorpayProvider {
   private razorpay: any;
@@ -11,7 +11,7 @@ export class RazorpayProvider {
     });
   }
   
-  async confirmPayment(params: razorpayConfirmPayment): Promise<razorpayConfirmPaymentResult | razorpayConfirmPaymentError> {
+  async createPaymentLink(params: razorpayCreatePaymentLink): Promise<razorpayCreatePaymentLinkResult | razorpayCreatePaymentLinkError> {
     try {
       const response = await this.razorpay.paymentLink.create({
         upi_link: params.upiLink,

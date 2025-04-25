@@ -7,7 +7,7 @@ export interface razorpayConfig extends baseProviderConfig {
   keySecret: string;
 }
 
-export interface razorpayConfirmPayment {
+export interface razorpayCreatePaymentLink {
   upiLink: boolean;
   amount: number;
   currency: string;
@@ -18,14 +18,14 @@ export interface razorpayConfirmPayment {
   metadata?: any;
 }
 
-export interface razorpayConfirmPaymentResult {
+export interface razorpayCreatePaymentLinkResult {
   referenceId: string;
   paymentLink: string;
   status: string;
   type: resultType;
 }
 
-export interface razorpayConfirmPaymentError {
+export interface razorpayCreatePaymentLinkError {
   message: string;
   type: resultType;
 }
