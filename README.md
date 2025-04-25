@@ -224,12 +224,12 @@ const provider = new BetterPay({
 
 ```
 
-2. Confirm Payment
+2. Create Payment Link
 
 Get the necessary details from the user.
 
 ```
-const response = await provider.confirmPayment({
+const response = await provider.createPaymentLink({
 
   upiLink: false, // UPI Link. By default false.
   amount: 1000,
