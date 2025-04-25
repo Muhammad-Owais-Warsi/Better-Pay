@@ -7,7 +7,10 @@
 
 <h1 align="center">Better Pay</h1> 
 <h3 align="center">The payment layer for modern applications.</h3>
-<img src="https://github.com/user-attachments/assets/5b661921-28c9-46bc-bd67-cdee58154761"/>
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/5b661921-28c9-46bc-bd67-cdee58154761" alt="Better Pay" />
+</div>
 
 
 ## What is Better Pay?
