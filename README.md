@@ -109,8 +109,8 @@ const provider = new BetterPay({
      name: 'NAME_OF_YOUR_PRODUCT',
      amount: 1000,
      currency: 'usd',
-     quantity: 1 //optional
-     metadat: {} // optional
+     quantity: 1 // optional. By default 1
+     metadata: {} // optional
    })
  ```
 
