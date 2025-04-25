@@ -75,7 +75,7 @@ export class StripeProvider {
         line_items: [
           {
             price: priceResponse.id,
-            quantity: 1
+            quantity: params.quantity || 1
           }
         ]
       });

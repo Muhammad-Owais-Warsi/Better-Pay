@@ -22,6 +22,7 @@ export interface stripeConfirmPayment {
 export interface stripeCreatePaymentPaymentLink {
   name: string;
   amount: number;
+  quantity?: number;
   currency: string;
   metadata?: any;
 }
