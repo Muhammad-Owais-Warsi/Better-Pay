@@ -64,7 +64,7 @@ export class DodoPaymentsProvider {
         },
         product_cart: [{
           product_id: params.productId,
-          quantity: 1
+          quantity: params.quantity || 1
         }],
         payment_link: params.paymentLink,
         return_url: params.returnUrl

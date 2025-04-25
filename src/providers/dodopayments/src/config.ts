@@ -18,6 +18,7 @@ export interface dodoPaymentsCreatePayment {
 export interface dodoPaymentsConfirmPayment {
   customerId: string;
   productId: string;
+  quantity?: number;
   city: string;
   countryIsoCode: string;
   state: string;
