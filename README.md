@@ -90,6 +90,32 @@ const response = await provider.confirmPayment({
 
 ```
 
+## STRIPE PAYMENT LINK
+
+1. Initialise the provider
+```
+import { BetterPay } from "better-pay";
+   
+const provider = new BetterPay({
+  provider: "stripe",
+  apiKey: "API_KEY_FOR_STRIPE" 
+})
+
+```
+
+2. Create Payment Link
+ ```
+   const response = provider.createPaymentLink({
+     name: 'NAME_OF_YOUR_PRODUCT',
+     amount: 1000,
+     currency: 'usd',
+     quantity: 1 //optional
+     metadat: {} // optional
+   })
+ ```
+
+
+
 ---
 
 
