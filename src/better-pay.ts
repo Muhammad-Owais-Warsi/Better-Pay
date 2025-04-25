@@ -2,7 +2,7 @@ import { StripeProvider } from "./providers/stripe/src/stripe";
 import { SquareProvider } from "./providers/square/src/sqaure";
 import { DodoPaymentsProvider } from "./providers/dodopayments/src";
 import { RazorpayProvider } from "./providers/razorpay/src";
-import { providerConfig, createPaymentResult, createPaymentError, confirmPaymentResult, confirmPaymentError , createPayment, confirmPayment, baseProviderConfig } from "./types";
+import { providerConfig, createPaymentResult, createPaymentError, confirmPaymentResult, confirmPaymentError , createPayment, confirmPayment, baseProviderConfig, createPaymentLink, createPaymentLinkResult, createPaymentLinkError } from "./types";
 
 export class BetterPay<T extends providerConfig> {
     
@@ -48,5 +48,15 @@ export class BetterPay<T extends providerConfig> {
       return error as confirmPaymentError<T>;
     }
   }
+  
+  async createPaymentLink(params: createPaymentLink<T>): Promise<createPaymentLinkResult<T> | createPaymentLinkError<T>> {
+    try {
+      const result = this.providerInstance.createPaymentLink(params);
+      return result;
+    } catch(error) {
+      return error as createPaymentLinkError<T>
+    }
+  }
+  
 
 }

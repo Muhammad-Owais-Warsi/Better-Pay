@@ -19,6 +19,13 @@ export interface stripeConfirmPayment {
   returnUrl: string;
 }
 
+export interface stripeCreatePaymentPaymentLink {
+  name: string;
+  amount: number;
+  currency: string;
+  metadata?: any;
+}
+
 
 export interface stripeCreatePaymentResult {
   paymentIntentId: string;
@@ -34,13 +41,25 @@ export interface stripeConfirmPaymentResult {
   type: resultType
 }
 
+export interface stripeCreatePaymentPaymentLinkResult {
+  productId: string;
+  priceId: string;
+  paymentLinkId: string;
+  paymentLink: string;
+  type: resultType;
+}
 
 export interface stripeCreatePaymentError {
   message: string;
-  type: resultType
+  type: resultType;
 }
 
 export interface stripeConfirmPaymentError {
   message: string;
-  type: resultType
+  type: resultType;
+}
+
+export interface stripeCreatePaymentPaymentLinkError {
+  message: string;
+  type: resultType;
 }

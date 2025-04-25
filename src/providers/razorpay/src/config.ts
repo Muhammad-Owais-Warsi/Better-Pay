@@ -1,4 +1,4 @@
-import { baseProviderConfig } from "../../../types";
+import { baseProviderConfig, resultType } from "../../../types";
 
 
 export interface razorpayConfig extends baseProviderConfig {
@@ -22,10 +22,10 @@ export interface razorpayConfirmPaymentResult {
   referenceId: string;
   paymentLink: string;
   status: string;
-  type: string;
+  type: resultType;
 }
 
 export interface razorpayConfirmPaymentError {
   message: string;
-  type: string;
+  type: resultType;
 }
