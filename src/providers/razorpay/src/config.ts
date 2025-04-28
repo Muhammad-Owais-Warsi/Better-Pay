@@ -14,6 +14,8 @@ export interface razorpayCreatePaymentLink {
   name?: string;
   phoneNumber?: number;
   email: string;
+  sendSMS?: boolean;
+  sendEmail?: boolean;
   returnUrl: string;
   metadata?: any;
 }

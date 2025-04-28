@@ -7,8 +7,8 @@ export interface dodoPaymentsConfig extends baseProviderConfig {
 };
 
 export interface dodoPaymentsCreatePayment {
-  amount: number;
-  discount?: number;
+  amount: number[];
+  discount?: number[];
   currency: string;
   email: string;
   name: string;
@@ -17,8 +17,8 @@ export interface dodoPaymentsCreatePayment {
 
 export interface dodoPaymentsConfirmPayment {
   customerId: string;
-  productId: string;
-  quantity?: number;
+  productId: string[];
+  quantity?: number[];
   city: string;
   countryIsoCode: string;
   state: string;
@@ -30,8 +30,26 @@ export interface dodoPaymentsConfirmPayment {
   
 }
 
+export interface dodoPaymentsCreatePaymentPaymentLink {
+  amount: number[];
+  discount?: number[];
+  currency: string;
+  email: string;
+  name: string;
+  phoneNumber?: number;
+  quantity?: number[];
+  city: string;
+  countryIsoCode: string;
+  state: string;
+  street: string;
+  zipCode: number;
+  paymentLink?: boolean;
+  returnUrl?: string;
+  metadata?: any;
+}
+
 export interface dodoPaymentsCreatePaymentResult {
-  productId: string;
+  productId: string[];
   customerId: string;
   businessId: string;
   type: resultType
@@ -44,6 +62,15 @@ export interface dodoPaymentsConfirmPaymentResult {
   type: resultType;
 }
 
+export interface dodoPaymentsCreatePaymentPaymentLinkResult {
+  paymentId: string;
+  clientSecret: string;
+  paymentLink: string;
+  productId: string[];
+  customerId: string;
+  businessId: string;
+  type: resultType;
+}
 
 export interface dodoPaymentsCreatePaymentError {
   message: string;
@@ -51,8 +78,12 @@ export interface dodoPaymentsCreatePaymentError {
   
 }
 
-
 export interface dodoPaymentsConfirmPaymentError {
   message: string;
   type: resultType
+}
+
+export interface dodoPaymentsCreatePaymentLinkError {
+  message: string;
+  type: resultType;
 }

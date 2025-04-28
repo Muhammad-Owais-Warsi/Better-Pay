@@ -61,30 +61,43 @@ export class StripeProvider {
   
   async createPaymentLink(params: stripeCreatePaymentPaymentLink): Promise<stripeCreatePaymentPaymentLinkResult | stripeCreatePaymentPaymentLinkError> {
     try {
-      const productResponse = await this.stripe.products.create({
-        name: params.name
+
+      const productPromises = params.name.map((name, i) => {
+        return this.stripe.products.create({
+          name: name,
+        });
       });
       
-      const priceResponse = await this.stripe.prices.create({
-        unit_amount: params.amount,
-        currency: params.currency,
-        product: productResponse.id
+      const products = await Promise.all(productPromises);
+      
+      const pricePromises = products.map((product, i) => {
+        return this.stripe.prices.create({
+          unit_amount: params.amount[i],
+          currency: params.currency,
+          product: product.id,
+        });
       });
+      
+      const prices = await Promise.all(pricePromises);
+      
+      const productResponses = products.map(product => product.id);
+      const priceResponses = prices.map(price => price.id);
+
+      const lineItems = priceResponses.map((price, i) =>({
+        price: price,
+        quantity: params.quantity?.[i] || 1
+      }))
       
       const paymentLinkResponse = await this.stripe.paymentLinks.create({
-        line_items: [
-          {
-            price: priceResponse.id,
-            quantity: params.quantity || 1
-          }
-        ]
+        line_items: lineItems,
+        metadata: params.metadata
       });
       
       return {
         paymentLinkId: paymentLinkResponse.id,
         paymentLink: paymentLinkResponse.url,
-        productId: productResponse.id,
-        priceId: priceResponse.id,
+        productId: productResponses,
+        priceId: priceResponses,
         type: 'Success'
       }
       

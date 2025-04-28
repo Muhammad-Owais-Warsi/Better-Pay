@@ -22,6 +22,10 @@ export class RazorpayProvider {
           email: params.email,
           contact: params.phoneNumber
         },
+        notify: {
+          sms: params.sendSMS || false,
+          email: params.sendEmail || false
+        },
         callback_url: params.returnUrl,
         notes: params.metadata
       });

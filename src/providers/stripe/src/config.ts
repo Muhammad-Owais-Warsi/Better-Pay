@@ -20,9 +20,9 @@ export interface stripeConfirmPayment {
 }
 
 export interface stripeCreatePaymentPaymentLink {
-  name: string;
-  amount: number;
-  quantity?: number;
+  name: string[];
+  amount: number[];
+  quantity?: number[];
   currency: string;
   metadata?: any;
 }
@@ -43,8 +43,8 @@ export interface stripeConfirmPaymentResult {
 }
 
 export interface stripeCreatePaymentPaymentLinkResult {
-  productId: string;
-  priceId: string;
+  productId: string[];
+  priceId: string[];
   paymentLinkId: string;
   paymentLink: string;
   type: resultType;

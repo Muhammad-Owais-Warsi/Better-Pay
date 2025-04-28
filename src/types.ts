@@ -1,6 +1,6 @@
 import { stripeConfig, stripeCreatePayment, stripeConfirmPayment, stripeCreatePaymentResult, stripeConfirmPaymentResult, stripeCreatePaymentError, stripeConfirmPaymentError, stripeCreatePaymentPaymentLink, stripeCreatePaymentPaymentLinkResult, stripeCreatePaymentPaymentLinkError } from "./providers/stripe/src/config";
 import { squareConfig, squareConfirmPayment, squareConfirmPaymentError, squareConfirmPaymentResult } from "./providers/square/src";
-import { dodoPaymentsConfig, dodoPaymentsCreatePayment, dodoPaymentsConfirmPayment, dodoPaymentsCreatePaymentResult, dodoPaymentsCreatePaymentError, dodoPaymentsConfirmPaymentError, dodoPaymentsConfirmPaymentResult } from "./providers/dodopayments/src";
+import { dodoPaymentsConfig, dodoPaymentsCreatePayment, dodoPaymentsConfirmPayment, dodoPaymentsCreatePaymentResult, dodoPaymentsCreatePaymentError, dodoPaymentsConfirmPaymentError, dodoPaymentsConfirmPaymentResult, dodoPaymentsCreatePaymentPaymentLink, dodoPaymentsCreatePaymentPaymentLinkResult, dodoPaymentsCreatePaymentLinkError } from "./providers/dodopayments/src";
 import { razorpayConfig, razorpayCreatePaymentLink, razorpayCreatePaymentLinkError, razorpayCreatePaymentLinkResult } from "./providers/razorpay/src";
 
 
@@ -26,6 +26,7 @@ export type confirmPayment<T extends providerConfig> =
 export type createPaymentLink<T extends providerConfig> =
   T extends stripeConfig ? stripeCreatePaymentPaymentLink :
   T extends razorpayConfig ? razorpayCreatePaymentLink :
+  T extends dodoPaymentsConfig ? dodoPaymentsCreatePaymentPaymentLink :
   never;
   
   
@@ -43,6 +44,7 @@ export type confirmPaymentResult<T extends providerConfig> =
 export type createPaymentLinkResult<T extends providerConfig> =
   T extends stripeConfig ? stripeCreatePaymentPaymentLinkResult :
   T extends razorpayConfig ? razorpayCreatePaymentLinkResult :
+  T extends dodoPaymentsConfig ? dodoPaymentsCreatePaymentPaymentLinkResult :
   never;
   
 export type createPaymentError<T extends providerConfig> =
@@ -61,6 +63,7 @@ export type confirmPaymentError<T extends providerConfig> =
 export type createPaymentLinkError<T extends providerConfig> =
   T extends stripeConfig ? stripeCreatePaymentPaymentLinkError :
   T extends razorpayConfig ? razorpayCreatePaymentLinkError :
+  T extends dodoPaymentsConfig ? dodoPaymentsCreatePaymentLinkError :
   never;
 
 
