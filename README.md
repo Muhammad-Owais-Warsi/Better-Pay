@@ -109,10 +109,10 @@ const provider = new BetterPay({
 2. Create Payment Link
  ```
    const response = provider.createPaymentLink({
-     name: 'NAME_OF_YOUR_PRODUCT',
-     amount: 1000,
+     name: ['NAME_OF_YOUR_PRODUCT'], // You can add more names seperated by comma.
+     amount: [1000], // You can add more amount seperated by comma.
      currency: 'usd',
-     quantity: 1 // optional. By default 1
+     quantity: [1] // optional. By default 1. You can add more quantity seperated by comma.
      metadata: {} // optional
    })
  ```
@@ -211,6 +211,42 @@ const response = await provider.confirmPayment({
 
 ```
 
+## DODO PAYMENTS PAYMENT LINK
+
+1. Initialise the provider
+```
+import { BetterPay } from "better-pay";
+   
+const provider = new BetterPay({
+  provider: "dodopayments",
+  apiKey: "API_KEY_FOR_STRIPE",
+  isLive: false // By default false. 
+})
+
+```
+
+2. Create Payment Link
+ ```
+   const response = provider.createPaymentLink({
+    amount: [100], // You can add more amount seperated by comma.
+    currency: 'USD',
+    discount: [0], // by default 0. You can add more discount seperated by comma.
+    email: 'test@gmail.com',
+    name: 'test',
+    phoneNumber: 99999999 // optional
+    city: 'USER_CITY',
+    countryIsoCode: 'USER_COUNTRY_ISO_CODE',
+    state: 'USER_STATE',
+    street: 'USER_STREET',
+    zipCode: USER_ZIP_CODE,
+    paymentLink: true, // One time payment link. By default false.
+    returnUrl: 'YOUR_RETURN_URL_AFTER_SUCCESSFULL_PAYMENT', // optional
+    metadata: {} //optional
+   })
+ ```
+
+
+
 ---
 
 ## RAZORPAY
@@ -241,6 +277,8 @@ const response = await provider.createPaymentLink({
   name: '', // optional
   phoneNumber:  , // optional
   email: 'test@gamil.com',
+  isSMS: false // Optional. By default false.
+  isEmail: false // Optional. By default false.
   returnUrl: 'YOUR_RETURN_URL_AFTER_SUCCESSFULL_PAYMENT',
   metadata: {} // optional
 
