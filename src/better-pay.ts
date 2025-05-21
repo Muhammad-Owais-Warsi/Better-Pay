@@ -3,6 +3,7 @@ import { SquareProvider } from "./providers/square/src/sqaure";
 import { DodoPaymentsProvider } from "./providers/dodopayments/src";
 import { RazorpayProvider } from "./providers/razorpay/src";
 import { providerConfig, createPaymentResult, createPaymentError, confirmPaymentResult, confirmPaymentError , createPayment, confirmPayment, baseProviderConfig, createPaymentLink, createPaymentLinkResult, createPaymentLinkError } from "./types";
+import { PolarProvider } from "./providers/polar/src";
 
 export class BetterPay<T extends providerConfig> {
     
@@ -24,6 +25,9 @@ export class BetterPay<T extends providerConfig> {
         break;
       case 'razorpay':
         this.providerInstance = new RazorpayProvider(config)
+        break;
+      case 'polar':
+        this.providerInstance = new PolarProvider(config)
         break;
       default:
         console.error(`Unsupported provider: ${this.provider}`)

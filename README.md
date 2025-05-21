@@ -58,7 +58,7 @@ const provider = new BetterPay({
 
 ```
 
-2. **Create Payment**
+2. Create Payment
    
 After initializing the provider:
  ```
@@ -175,9 +175,10 @@ const provider = new BetterPay({
 
 ```
 
-2. **Create Payment**
-   
+2. Create Payment
+
 After initializing the provider:
+
  ```
 const response = await provider.createPayment({
   amount: 100,
@@ -282,6 +283,49 @@ const response = await provider.createPaymentLink({
   returnUrl: 'YOUR_RETURN_URL_AFTER_SUCCESSFULL_PAYMENT',
   metadata: {} // optional
 
+})
+
+```
+
+---
+
+## POLAR 
+ Get started with our sample demo app integrated with polar. [Demo](https://github.com/Muhammad-Owais-Warsi/stripe-demo)
+
+
+1. Initialise the provider
+```
+import { BetterPay } from "better-pay";
+   
+const provider = new BetterPay({
+  provider: "polar",
+  accessToken: "ACCESS_TOKEN_FOR_POLAR" 
+})
+
+```
+
+1. Create Payment
+   
+After initializing the provider:
+ ```
+const response = await provider.createPayment({
+  name: 'NAME_OF_PRODUCT',
+  amount: 10000,
+  currency: 'usd',
+  organizationId: 'YOUR_ORGANIZATION_ID', // optional
+  metadata: {} // optional
+})
+
+```
+
+2. Confirm Payment
+
+Get the `product_id` from above:
+
+```
+const response = await provider.confirmPayment({
+  productId: ['PRODUCT_ID'], // You can add more amount seperated by comma.
+  returnUrl: 'YOUR_RETURN_URL_AFTER_SUCCESSFULL_PAYMENT'
 })
 
 ```
