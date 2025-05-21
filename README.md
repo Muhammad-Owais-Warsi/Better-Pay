@@ -290,7 +290,7 @@ const response = await provider.createPaymentLink({
 ---
 
 ## POLAR 
- Get started with our sample demo app integrated with polar. [Demo](https://github.com/Muhammad-Owais-Warsi/stripe-demo)
+ Get started with our sample demo app integrated with polar. [Demo](https://github.com/Muhammad-Owais-Warsi/polar_demo)
 
 
 1. Initialise the provider
