@@ -1,5 +1,4 @@
-import { baseProviderConfig, resultType } from "../../../types";
-
+import { baseProviderConfig, resultType } from "../../types.js";
 
 export interface razorpayConfig extends baseProviderConfig {
   provider: 'razorpay';

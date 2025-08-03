@@ -1,4 +1,4 @@
-import { baseProviderConfig, resultType } from "../../../types";
+import { baseProviderConfig, resultType } from "../../types";
 
 export interface stripeConfig extends baseProviderConfig {
   provider: 'stripe';

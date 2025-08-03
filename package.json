@@ -7,26 +7,47 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsup"
+    "dev": "tsc --watch",
+    "clean": "rimraf ./dist",
+    "build": "rimraf ./dist && tsc --incremental false"
   },
   "repository": {
-      "url": "https://github.com/Muhammad-Owais-Warsi/Better-Pay",
-      "type": "git"
+    "url": "https://github.com/Muhammad-Owais-Warsi/Better-Pay",
+    "type": "git"
   },
-  "homepage": "https://better-pay.gitbook.io/better-pay" ,
+  "homepage": "https://better-pay.gitbook.io/better-pay",
   "files": [
     "dist"
   ],
   "exports": {
     ".": {
-      "import": "./dist/index.cjs",
-      "require": "./dist/index.cjs"
-    }
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./providers/dodopayments": "./dist/providers/dodopayments/index.js",
+    "./providers/polar": "./dist/providers/polar/index.js",
+    "./providers/razorpay": "./dist/providers/razorpay/index.js",
+    "./providers/square": "./dist/providers/square/index.js",
+    "./providers/stripe": "./dist/providers/stripe/index.js"
   },
   "devDependencies": {
-    "@types/node": "^18.18.0",
+    "@polar-sh/sdk": "^0.34.9",
+    "@types/node": "^24.1.0",
+    "@typescript-eslint/eslint-plugin": "^8.38.0",
+    "@typescript-eslint/parser": "^8.38.0",
+    "dodopayments": "^1.44.0",
+    "eslint": "^9.32.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-prettier": "^5.5.3",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "prettier": "^3.6.2",
+    "razorpay": "^2.9.6",
+    "rimraf": "^6.0.1",
+    "square": "^43.0.1",
+    "stripe": "^18.4.0",
     "ts-node": "^10.9.1",
     "tsup": "^8.4.0",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.2"
   }
 }
