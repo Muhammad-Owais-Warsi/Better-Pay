@@ -1,5 +1,5 @@
 import Razorpay from "razorpay";
-import { razorpayCreatePaymentLink, razorpayCreatePaymentLinkError, razorpayCreatePaymentLinkResult } from "./config";
+import { razorpayCreatePaymentLink, razorpayCreatePaymentLinkError, razorpayCreatePaymentLinkResult } from "./config.js";
 
 export class RazorpayProvider {
   private razorpay: any;

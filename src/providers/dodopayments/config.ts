@@ -1,4 +1,4 @@
-import { baseProviderConfig, resultType } from "../../../types";
+import { baseProviderConfig, resultType } from "../../types.js";
 
 export interface dodoPaymentsConfig extends baseProviderConfig {
   provider: 'dodopayments',

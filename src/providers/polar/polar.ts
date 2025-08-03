@@ -1,5 +1,5 @@
 import { Polar } from "@polar-sh/sdk"
-import { polarConfirmPayment, polarConfirmPaymentError, polarConfirmPaymentResult, polarCreatePayment, polarCreatePaymentError, polarCreatePaymentResult } from "./config";
+import { polarConfirmPayment, polarConfirmPaymentError, polarConfirmPaymentResult, polarCreatePayment, polarCreatePaymentError, polarCreatePaymentResult } from "./config.js";
  
 export class PolarProvider {
   private polar: any;

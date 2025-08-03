@@ -1,5 +1,5 @@
 import DodoPayments from "dodopayments";
-import { dodoPaymentsConfirmPayment, dodoPaymentsConfirmPaymentError, dodoPaymentsConfirmPaymentResult, dodoPaymentsCreatePayment, dodoPaymentsCreatePaymentError, dodoPaymentsCreatePaymentLinkError, dodoPaymentsCreatePaymentPaymentLink, dodoPaymentsCreatePaymentPaymentLinkResult, dodoPaymentsCreatePaymentResult } from "./config";
+import { dodoPaymentsConfirmPayment, dodoPaymentsConfirmPaymentError, dodoPaymentsConfirmPaymentResult, dodoPaymentsCreatePayment, dodoPaymentsCreatePaymentError, dodoPaymentsCreatePaymentLinkError, dodoPaymentsCreatePaymentPaymentLink, dodoPaymentsCreatePaymentPaymentLinkResult, dodoPaymentsCreatePaymentResult } from "./config.js";
 
 
 export class DodoPaymentsProvider {

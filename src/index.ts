@@ -1,2 +1,2 @@
-export * from "./better-pay"
-export * from "./types"
+export * from "./better-pay.js"
+export * from "./types.js"

@@ -1,4 +1,4 @@
-import { baseProviderConfig } from "better-pay";
+import { baseProviderConfig } from "../../types.js";
 
 export interface polarConfig extends baseProviderConfig {
   provider: 'polar',
