@@ -1,2 +1,2 @@
-export * from "./config"
-export * from "./dodo"
+export * from "./types";
+export * from "./dodo";
